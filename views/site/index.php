@@ -2,19 +2,21 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'My Yii Application';
+$this->title = Yii::$app->name . ' | Home';
 ?>
 <div class="site-index">
 
     <div class="jumbotron">
-        <h1>Congratulations!</h1>
+        <h1>Wellcome to <?=Yii::$app->name?>!</h1>
 
-        <p class="lead">You have successfully created your Yii-powered application.</p>
+        <p class="lead">Here you can plant and log all of your seeds.</p>
 
-        <p><a class="btn btn-lg btn-success" href="http://www.yiiframework.com">Get started with Yii</a></p>
+        <?php if (Yii::$app->user->isGuest): ?>
+            <p>Please <a class="btn btn-lg btn-success" href="/site/login">log in</a> to start.</p>
+        <?php endif; ?>
     </div>
 
-    <div class="body-content">
+    <!-- div class="body-content">
 
         <div class="row">
             <div class="col-lg-4">
@@ -49,5 +51,6 @@ $this->title = 'My Yii Application';
             </div>
         </div>
 
-    </div>
+    </div -->
+
 </div>
