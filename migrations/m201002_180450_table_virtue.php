@@ -27,7 +27,7 @@ class m201002_180450_table_virtue extends Migration
                     0 => 'PRIMARY KEY (`id`)',
                     'name' => 'VARCHAR(255) NOT NULL',
                     'added_at' => 'TIMESTAMP NOT NULL',
-                    'updated_at' => 'TIMESTAMP NOT NULL',
+                    'updated_at' => 'TIMESTAMP NULL',
                 ], $tableOptions_mysql);
             }
         }
