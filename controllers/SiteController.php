@@ -4,11 +4,15 @@ namespace app\controllers;
 
 use Yii;
 use yii\filters\AccessControl;
+use yii\helpers\ArrayHelper;
 use yii\web\Controller;
 use yii\web\Response;
 use yii\filters\VerbFilter;
 use app\models\LoginForm;
 use app\models\ContactForm;
+use app\models\Seed;
+use app\models\Virtue;
+
 
 class SiteController extends Controller
 {
@@ -61,7 +65,30 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        return $this->render('index');
+        $virtue = Virtue::find()->select('id,name')->asArray()->all();
+        $virtue = ArrayHelper::map($virtue, 'id', 'name');
+
+        if (Yii::$app->request->getIsPost()) {
+            $model = new Seed();
+            if ($model->load(Yii::$app->request->post())) {
+                if ($model->save()) {
+                    \Yii::$app->getSession()->setFlash('success', 'I have logged your seed successfully.');
+                }
+            }
+        }
+
+        $model = new Seed();
+        $time = date('H:i:s');
+        $date = date('Y-m-d');
+        $userId = Yii::$app->user->getId();
+
+        return $this->render('index', [
+            'model' => $model,
+            'virtue' => $virtue,
+            'time' => $time,
+            'date' => $date,
+            'userId' => $userId,
+        ]);
     }
 
     /**
