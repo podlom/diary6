@@ -14,10 +14,11 @@ $this->params['breadcrumbs'][] = $this->title;
     <table class="table-responsive">
         <tr><th>Virtue #</th><th>Virtue Name</th><th>Count Good Seeds Planted</th></tr>
     <?php
-    $htmlData = '';
-    foreach ($seedsData as $s1) {
-        $htmlData .= '<tr><td>' . $s1['virtue_id'] . '</td><td>' . $s1['name'] . '</td><td>' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
-    }
+        $htmlData = '';
+        foreach ($seedsData as $s1) {
+            $htmlData .= '<tr><td>' . $s1['virtue_id'] . '</td><td>' . $s1['name'] . '</td><td>' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
+        }
+        echo $htmlData;
     ?>
     </table>
 
