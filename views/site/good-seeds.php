@@ -16,7 +16,7 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php
         $htmlData = '';
         foreach ($seedsData as $s1) {
-            $htmlData .= '<tr><td>' . $s1['virtue_id'] . '</td><td>' . $s1['name'] . '</td><td>' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
+            $htmlData .= '<tr><td class="text-center">' . $s1['virtue_id'] . '</td><td>' . $s1['name'] . '</td><td class="text-center font-weight-bold">' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
         }
         echo $htmlData;
     ?>
