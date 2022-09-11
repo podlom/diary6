@@ -69,4 +69,11 @@ class Seed extends \yii\db\ActiveRecord
     {
         return $this->hasOne(Virtue::className(), ['id' => 'virtue_id']);
     }
+
+    public static function getGoodSeedsAsArray($userId)
+    {
+        $userId = intval($userId);
+        
+        return Yii::$app->db->CreateCommand('select count(s.virtue_id) as cnt_good_seeds_planted, s.virtue_id, v.name from seed AS s inner join virtue AS v on v.id = s.virtue_id where s.user_id = ' . $userId . ' and s.is_positive = 1 group by s.virtue_id')->queryAll();;
+    }
 }

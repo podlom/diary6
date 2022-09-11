@@ -151,4 +151,18 @@ class SiteController extends Controller
     {
         return $this->render('about');
     }
+
+    /**
+     * @return string
+     */
+    public function actionGoodSeeds()
+    {
+        $userId = Yii::$app->user->getId();
+        $seedsData = Seed::getGoodSeedsAsArray($userId);
+
+        return $this->render('good-seeds', [
+            'userId' => $userId,
+            'seedsData' => $seedsData,
+        ]);
+    }
 }
