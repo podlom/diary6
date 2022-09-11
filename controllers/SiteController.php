@@ -65,8 +65,7 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $virtue = Virtue::find()->select('id,name')->asArray()->all();
-        $virtue = ArrayHelper::map($virtue, 'id', 'name');
+        $virtue = Virtue::getVirtuesAsArray();
 
         if (Yii::$app->request->getIsPost()) {
             $model = new Seed();
