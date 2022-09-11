@@ -3,6 +3,8 @@
 namespace app\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
+
 
 /**
  * This is the model class for table "virtue".
@@ -57,5 +59,27 @@ class Virtue extends \yii\db\ActiveRecord
     public function getSeeds()
     {
         return $this->hasMany(Seed::className(), ['virtue_id' => 'id']);
+    }
+
+    public static function getVirtuesAsArray()
+    {
+        $retData = [];
+        Yii::info($retData);
+
+        // $virtue = self::find()->select('id,name')->asArray()->all();
+        // $virtue = self::find()->select('id,name')->asArray();
+        // $virtue = \app\models\Virtue::find()->all();
+        // $virtue = Virtue::find()->all();
+        // $virtue = static::find()->all();
+        // $virtue = self::find()->all();
+        // Yii::info($virtue);
+
+        if (!empty($virtue)) {
+            $virtue = ArrayHelper::map($virtue, 'id', 'name');
+            Yii::info($virtue);
+            $retData = $virtue;
+        }
+
+        return $retData;
     }
 }
