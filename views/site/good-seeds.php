@@ -6,13 +6,14 @@
 use yii\helpers\Html;
 
 $this->title = 'Good seeds planted';
-$this->params['breadcrumbs'][] = $this->title;
+// $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-good-seeds">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <table class="table-responsive">
-        <tr><th>Virtue #</th><th>Virtue Name</th><th>Count Good Seeds Planted</th></tr>
+        <tr><th>ID #</th><th>Virtue Name</th><th>Count Good Seeds Planted</th></tr>
     <?php
         $htmlData = '';
         foreach ($seedsData as $s1) {
