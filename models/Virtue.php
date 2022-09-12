@@ -64,22 +64,15 @@ class Virtue extends \yii\db\ActiveRecord
     public static function getVirtuesAsArray()
     {
         $retData = [];
-        Yii::info($retData);
-
-        // $virtue = self::find()->select('id,name')->asArray()->all();
-        // $virtue = self::find()->select('id,name')->asArray();
-        // $virtue = \app\models\Virtue::find()->all();
-        // $virtue = Virtue::find()->all();
-        // $virtue = static::find()->all();
-        // $virtue = self::find()->all();
+        // Yii::info($retData);
+        $virtue = self::find()->select('id,name')->asArray()->all();
         // Yii::info($virtue);
-
         if (!empty($virtue)) {
             $virtue = ArrayHelper::map($virtue, 'id', 'name');
-            Yii::info($virtue);
+            // Yii::info($virtue);
             $retData = $virtue;
         }
-
+        // Yii::info($retData);
         return $retData;
     }
 }
