@@ -2,6 +2,7 @@
 
 /* @var $this yii\web\View */
 /* @var $seedsData array */
+/* @var $numGoodSeeds int */
 
 use yii\helpers\Html;
 
@@ -11,6 +12,8 @@ $this->title = 'Good seeds planted';
 ?>
 <div class="site-good-seeds">
     <h1><?= Html::encode($this->title) ?></h1>
+
+    <p>Total number of good seeds planted: <?= $numGoodSeeds ?>.</p>
 
     <table class="table-responsive">
         <tr><th>ID #</th><th>Virtue Name</th><th>Count Good Seeds Planted</th></tr>
