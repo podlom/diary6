@@ -83,4 +83,11 @@ class Seed extends \yii\db\ActiveRecord
 
         return Yii::$app->db->CreateCommand('select count(s.virtue_id) as cnt_good_seeds_planted from seed AS s where s.user_id = ' . $userId . ' and s.is_positive = 1')->queryScalar();
     }
+
+    public static function getNumSeeds(int $userId)
+    {
+        $userId = intval($userId);
+
+        return Yii::$app->db->CreateCommand('select count(s.virtue_id) as cnt_good_seeds_planted from seed AS s where s.user_id = ' . $userId)->queryScalar();
+    }
 }

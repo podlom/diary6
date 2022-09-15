@@ -159,11 +159,13 @@ class SiteController extends Controller
     {
         $userId = Yii::$app->user->getId();
         $seedsData = Seed::getGoodSeedsAsArray($userId);
+        $numSeeds = Seed::getNumSeeds($userId);
         $numGoodSeeds = Seed::getNumGoodSeeds($userId);
 
         return $this->render('good-seeds', [
             'userId' => $userId,
             'seedsData' => $seedsData,
+            'numSeeds' => $numSeeds,
             'numGoodSeeds' => $numGoodSeeds,
         ]);
     }
