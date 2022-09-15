@@ -7,14 +7,14 @@
 
 use yii\helpers\Html;
 
-$this->title = 'Good seeds planted';
+$this->title = 'Good seeds planted: ' . $numGoodSeeds;
 // $this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="site-good-seeds">
     <h1><?= Html::encode($this->title) ?></h1>
 
-    <p>Total number of seeds planted: <strong><?= $numSeeds ?></strong>.</p>
+    <p>All seeds planted: <strong><?= $numSeeds ?></strong>.</p>
     <p>Total number of <strong>good seeds</strong> planted: <strong><?= $numGoodSeeds ?></strong>.</p>
 
     <table class="table-responsive">
