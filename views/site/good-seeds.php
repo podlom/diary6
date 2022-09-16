@@ -23,16 +23,12 @@ $this->title = 'Good seeds planted: ' . $numGoodSeeds;
     <?php
         $htmlData = '';
         foreach ($virtue as $vId => $vName) {
-            $s1 = $seedsData[$vId];
-            if (isset($seedsData[$vId])) {
-                $htmlData .= '<tr><td class="text-center">' . $vId . '</td><td>' . $vName . '</td><td class="text-center font-weight-bold">' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
-            } else {
-                $htmlData .= '<tr><td class="text-center">' . $vId . '</td><td>' . $vName . '</td><td class="text-center font-weight-bold">0</td></tr>';
+            $cntSeedsPlanted = 0;
+            if ($vId == $seedsData['virtue_id']) {
+                $cntSeedsPlanted = $seedsData['cnt_good_seeds_planted'];
             }
+            $htmlData .= '<tr><td class="text-center">' . $vId . '</td><td>' . $vName . '</td><td class="text-center font-weight-bold">' . $cntSeedsPlanted . '</td></tr>';
         }
-        /* foreach ($seedsData as $s1) {
-            $htmlData .= '<tr><td class="text-center">' . $s1['virtue_id'] . '</td><td>' . $s1['name'] . '</td><td class="text-center font-weight-bold">' . $s1['cnt_good_seeds_planted'] . '</td></tr>';
-        } */
         echo $htmlData;
     ?>
     </table>
