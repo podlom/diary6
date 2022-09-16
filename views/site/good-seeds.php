@@ -22,12 +22,12 @@ $this->title = 'Good seeds planted: ' . $numGoodSeeds;
         <tr><th>ID #</th><th>Virtue Name</th><th>Count Good Seeds Planted</th></tr>
     <?php
         $htmlData = '';
-        foreach ($virtue as $vId => $vName) {
+        foreach ($virtue as $v1) {
             $cntSeedsPlanted = 0;
-            if ($vId == $seedsData['virtue_id']) {
+            if ($v1['id'] == $seedsData['virtue_id']) {
                 $cntSeedsPlanted = $seedsData['cnt_good_seeds_planted'];
             }
-            $htmlData .= '<tr><td class="text-center">' . $vId . '</td><td>' . $vName . '</td><td class="text-center font-weight-bold">' . $cntSeedsPlanted . '</td></tr>';
+            $htmlData .= '<tr><td class="text-center">' . $v1['id'] . '</td><td>' . $v1['name'] . '</td><td class="text-center font-weight-bold">' . $cntSeedsPlanted . '</td></tr>';
         }
         echo $htmlData;
     ?>
