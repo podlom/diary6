@@ -157,12 +157,14 @@ class SiteController extends Controller
      */
     public function actionGoodSeeds()
     {
+        $virtue = Virtue::getVirtuesAsArray();
         $userId = Yii::$app->user->getId();
         $seedsData = Seed::getGoodSeedsAsArray($userId);
         $numSeeds = Seed::getNumSeeds($userId);
         $numGoodSeeds = Seed::getNumGoodSeeds($userId);
 
         return $this->render('good-seeds', [
+            'virtue' => $virtue,
             'userId' => $userId,
             'seedsData' => $seedsData,
             'numSeeds' => $numSeeds,
