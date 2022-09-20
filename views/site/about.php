@@ -4,15 +4,19 @@
 
 use yii\helpers\Html;
 
-$this->title = 'About';
+
+$this->title = 'About &#171;Diary - the Six Time Book&#187;';
 $this->params['breadcrumbs'][] = $this->title;
+
 ?>
 <div class="site-about">
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
-        This is the About page. You may modify the following file to customize its content:
+        Wellcome to &#171;Diary - the Six Time Book&#187;.
     </p>
 
-    <code><?= __FILE__ ?></code>
+    <p>
+        In this applicaion you can log all of your good and bad seeds on a Ten Vurtues.
+    </p>
 </div>

@@ -23,6 +23,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            'identityCookie' => ['name' => '_identity-frontend', 'httpOnly' => true],
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
@@ -55,6 +56,8 @@ $config = [
     'modules' => [
         'utility' => [
             'class' => 'c006\utility\migration\Module',
+            // uncomment the following to add your IP if you are not connecting from localhost.
+            'allowedIPs' => ['127.0.0.1', '::1', '172.21.0.1'],
         ],
     ],
     'timeZone' => 'Europe/Kiev',
