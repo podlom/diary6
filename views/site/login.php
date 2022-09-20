@@ -41,6 +41,6 @@ $this->params['breadcrumbs'][] = $this->title;
     <?php ActiveForm::end(); ?>
 
     <div class="col-lg-offset-1" style="color:#999;">
-        If you are first time here, go and <a href="/site/login">register a new account</a>.
+        If you are first time here, go and <a href="/site/signup">register a new account</a>.
     </div>
 </div>
