@@ -22,7 +22,11 @@ use kartik\switchinput\SwitchInput;
             The seed is ... <strong>Positive</strong> - "ON" or <strong>Negative</strong> - "OFF"
         </div>
         <div>
-            <?php echo SwitchInput::widget(['name' => 'is_positive',
+            <?php
+            
+            // @see: https://demos.krajee.com/widget-details/switchinput
+            $model->is_positive = true;
+            echo SwitchInput::widget(['name' => 'is_positive',
                 'type' => SwitchInput::CHECKBOX,
                 'pluginOptions' => [
                     'onText' => 'Positive',
@@ -30,7 +34,9 @@ use kartik\switchinput\SwitchInput;
                     'onColor' => 'success',
                     'offColor' => 'danger',
                 ]
-            ]); ?>
+            ]);
+
+            ?>
         </div>
         <?= $form->field($model, 'virtue_id')->dropDownList($virtue, ['prompt' => '--- Choose virtue ---']) ?>
         <?= $form->field($model, 'seed_time')->textInput(['value' => $time]) ?>
