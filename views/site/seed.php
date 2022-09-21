@@ -23,10 +23,10 @@ use kartik\switchinput\SwitchInput;
         </div>
         <div>
             <?php
-            
+
             // @see: https://demos.krajee.com/widget-details/switchinput
-            $model->is_positive = true;
             echo SwitchInput::widget(['name' => 'is_positive',
+                'value'=> true,
                 'type' => SwitchInput::CHECKBOX,
                 'pluginOptions' => [
                     'onText' => 'Positive',
