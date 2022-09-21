@@ -19,10 +19,18 @@ use kartik\switchinput\SwitchInput;
     <?php $form = ActiveForm::begin(); ?>
 
         <div class="text-center">
-            The seed is ... positive - "YES" or negative - "NO"
+            The seed is ... <strong>Positive</strong> - "ON" or <strong>Negative</strong> - "OFF"
         </div>
         <div>
-            <?php echo SwitchInput::widget(['name' => 'is_positive', 'type' => SwitchInput::CHECKBOX ]); ?>
+            <?php echo SwitchInput::widget(['name' => 'is_positive',
+                'type' => SwitchInput::CHECKBOX,
+                'pluginOptions' => [
+                    'onText' => 'Positive',
+                    'offText' => 'Negative',
+                    'onColor' => 'success',
+                    'offColor' => 'danger',
+                ]
+            ]); ?>
         </div>
         <?= $form->field($model, 'virtue_id')->dropDownList($virtue, ['prompt' => '--- Choose virtue ---']) ?>
         <?= $form->field($model, 'seed_time')->textInput(['value' => $time]) ?>
