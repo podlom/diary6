@@ -77,27 +77,13 @@ class SiteController extends Controller
      */
     public function actionIndex()
     {
-        $virtue = Virtue::getVirtuesAsArray();
-
-        if (Yii::$app->request->getIsPost()) {
-            $model = new Seed();
-            if ($model->load(Yii::$app->request->post())) {
-                if ($model->save()) {
-                    \Yii::$app->getSession()->setFlash('success', 'I have logged your seed successfully.');
-                }
-            }
+        $userId = Yii::$app->user->getId();
+        if (!is_null($userId)) {
+            $url = '/seed/create';
         }
 
-        $model = new Seed();
-        $time = date('H:i:s');
-        $date = date('Y-m-d');
-        $userId = Yii::$app->user->getId();
-
         return $this->render('index', [
-            'model' => $model,
-            'virtue' => $virtue,
-            'time' => $time,
-            'date' => $date,
+            'url'    => $url,
             'userId' => $userId,
         ]);
     }
@@ -164,25 +150,7 @@ class SiteController extends Controller
         return $this->render('about');
     }
 
-    /**
-     * @return string
-     */
-    public function actionGoodSeeds()
-    {
-        $virtue = Virtue::getVirtuesAsArray();
-        $userId = Yii::$app->user->getId();
-        $seedsData = Seed::getGoodSeedsAsArray($userId);
-        $numSeeds = Seed::getNumSeeds($userId);
-        $numGoodSeeds = Seed::getNumGoodSeeds($userId);
 
-        return $this->render('good-seeds', [
-            'virtue' => $virtue,
-            'userId' => $userId,
-            'seedsData' => $seedsData,
-            'numSeeds' => $numSeeds,
-            'numGoodSeeds' => $numGoodSeeds,
-        ]);
-    }
 
     /**
      * Signs user up.

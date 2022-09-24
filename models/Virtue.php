@@ -72,7 +72,7 @@ class Virtue extends \yii\db\ActiveRecord
             // Yii::info($virtue);
             $retData = $virtue;
         }
-        // Yii::info($retData);
+        Yii::info($retData);
         return $retData;
     }
 }

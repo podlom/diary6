@@ -1,11 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-/* @var $model app\models\Seed */
-/* @var $virtue array */
-/* @var $time string */
-/* @var $date string */
-/* @var $userId int */
+/* @var $url string */
 
 
 $this->title = Yii::$app->name . ' | Home';
@@ -19,8 +15,12 @@ $this->title = Yii::$app->name . ' | Home';
 
         <?php if (Yii::$app->user->isGuest): ?>
             <p>Please <a class="btn btn-lg btn-success" href="/site/login">log in</a> to start.</p>
-        <?php else:
-            include 'seed.php';
-        endif; ?>
+        <?php else: ?>
+            <ul>
+                <li><a href="/seed/create">Plant a new seed;</a></li>
+                <li><a href="/seed/index">List of planted seeds;</a></li>
+                <li><a href="/seed/good">Good seeds planted.</a></li>
+            </ul>
+        <?php endif; ?>
     </div>
 </div>
