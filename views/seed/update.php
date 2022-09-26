@@ -9,6 +9,7 @@ use yii\helpers\Html;
 /* @var $time string */
 /* @var $date string */
 /* @var $userId int */
+/* @var $updatedAt string */
 
 $this->title = Yii::t('app', 'Update the Seed: {name}', [
     'name' => $model->id,
@@ -23,11 +24,12 @@ $this->params['breadcrumbs'][] = Yii::t('app', 'Update');
     <h1><?= Html::encode($this->title) ?></h1>
 
     <?= $this->render('_form', [
-        'model'   => $model,
-        'virtue'  => $virtue,
-        'date'    => $date,
-        'time'    => $time,
-        'userId'  => $userId,
+        'model'      => $model,
+        'virtue'     => $virtue,
+        'date'       => $date,
+        'time'       => $time,
+        'userId'     => $userId,
+        'updatedAt'  => $updatedAt,
     ]) ?>
 
 </div>

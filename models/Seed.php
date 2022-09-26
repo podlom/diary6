@@ -16,6 +16,7 @@ use Yii;
  * @property string $description
  * @property int $is_positive
  * @property string $added_at
+ * @property string $updated_at
  *
  * @property Virtue $virtue
  */
@@ -37,7 +38,7 @@ class Seed extends \yii\db\ActiveRecord
         return [
             [['virtue_id', 'seed_time', 'seed_date', 'user_id', 'description', 'added_at'], 'required'],
             [['virtue_id', 'user_id', 'is_positive'], 'integer'],
-            [['seed_time', 'seed_date', 'added_at'], 'safe'],
+            [['seed_time', 'seed_date', 'added_at', 'updated_at'], 'safe'],
             [['description'], 'string'],
             [['virtue_id'], 'exist', 'skipOnError' => true, 'targetClass' => Virtue::className(), 'targetAttribute' => ['virtue_id' => 'id']],
         ];
@@ -57,6 +58,7 @@ class Seed extends \yii\db\ActiveRecord
             'description' => 'Description',
             'is_positive' => 'Is Positive',
             'added_at' => 'Added At',
+            'updated_at' => 'Updated At',
         ];
     }
 

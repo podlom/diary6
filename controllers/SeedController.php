@@ -78,11 +78,12 @@ class SeedController extends Controller
         }
 
         return $this->render('create', [
-            'model'   => $model,
-            'virtue'  => $virtue,
-            'date'    => $date,
-            'time'    => $time,
-            'userId'  => $userId,
+            'model'      => $model,
+            'virtue'     => $virtue,
+            'date'       => $date,
+            'time'       => $time,
+            'userId'     => $userId,
+            'updatedAt'  => '',
         ]);
     }
 
@@ -100,18 +101,20 @@ class SeedController extends Controller
         $model = $this->findModel($id);
         $date = $model->seed_date;
         $time = $model->seed_time;
+        $updatedAt = date('Y-m-d H:i:s');
 
-        Yii::info(__METHOD__ . ' +' . __LINE__ . ' POST data: ' . var_export(Yii::$app->request->post(), true));
+        // Yii::info(__METHOD__ . ' +' . __LINE__ . ' POST data: ' . var_export(Yii::$app->request->post(), true));
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         }
 
         return $this->render('update', [
-            'model'   => $model,
-            'virtue'  => $virtue,
-            'date'    => $date,
-            'time'    => $time,
-            'userId'  => $userId,
+            'model'      => $model,
+            'virtue'     => $virtue,
+            'date'       => $date,
+            'time'       => $time,
+            'userId'     => $userId,
+            'updatedAt'  => $updatedAt,
         ]);
     }
 

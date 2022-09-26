@@ -3,6 +3,7 @@
 use yii\helpers\Html;
 use yii\widgets\DetailView;
 
+
 /* @var $this yii\web\View */
 /* @var $model app\models\Seed */
 
@@ -10,6 +11,7 @@ $this->title = $model->id;
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Seeds'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 \yii\web\YiiAsset::register($this);
+
 ?>
 <div class="seed-view">
 
@@ -37,6 +39,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'description:ntext',
             'is_positive',
             'added_at',
+            'updated_at',
         ],
     ]) ?>
 

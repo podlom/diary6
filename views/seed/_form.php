@@ -12,6 +12,11 @@ use kartik\switchinput\SwitchInput;
 /* @var $time string */
 /* @var $date string */
 /* @var $userId int */
+/* @var $updatedAt string */
+
+if (empty($updatedAt)) {
+    $updatedAt = $date . ' ' . $time;
+}
 
 ?>
 
@@ -46,6 +51,8 @@ use kartik\switchinput\SwitchInput;
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>
 
     <?= $form->field($model, 'added_at')->hiddenInput(['value' => $date . ' ' . $time])->label(false) ?>
+
+    <?= $form->field($model, 'updated_at')->hiddenInput(['value' => $updatedAt])->label(false) ?>
 
     <div class="form-group">
         <?= Html::submitButton(Yii::t('app', 'Save'), ['class' => 'btn btn-success']) ?>
