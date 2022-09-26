@@ -9,7 +9,7 @@
 use yii\helpers\Html;
 
 $this->title = 'Good seeds planted: ' . $numGoodSeeds;
-// $this->params['breadcrumbs'][] = $this->title;
+$this->params['breadcrumbs'][] = $this->title;
 
 ?>
 <div class="site-good-seeds">

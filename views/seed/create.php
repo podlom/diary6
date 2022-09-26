@@ -10,7 +10,7 @@ use yii\helpers\Html;
 /* @var $date string */
 /* @var $userId int */
 
-$this->title = Yii::t('app', 'Create Seed');
+$this->title = Yii::t('app', 'Plant a Seed');
 $this->params['breadcrumbs'][] = ['label' => Yii::t('app', 'Seeds'), 'url' => ['index']];
 $this->params['breadcrumbs'][] = $this->title;
 

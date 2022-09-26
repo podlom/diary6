@@ -46,9 +46,9 @@ class SeedSearch extends Seed
         $userId = Yii::$app->user->getId();
         Yii::info(__METHOD__ . ' +' . __LINE__ . ' $userId: ' . var_export($userId, true));
         if (!is_null($userId)) {
-            $query = Seed::find()->where(['user_id' => $userId]);
+            $query = Seed::find()->where(['user_id' => $userId])->orderBy(['id' => SORT_DESC]);
         } else {
-            $query = Seed::find();
+            $query = Seed::find()->orderBy(['id' => SORT_DESC]);
         }
 
         // add conditions that should always apply here
