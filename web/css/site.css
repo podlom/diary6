@@ -114,6 +114,6 @@ a.desc:after {
     outline: none;
 }
 
-.breadcrumb li {
+.breadcrumb li, .pagination li {
     padding-left: 1rem;
 }
