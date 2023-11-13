@@ -20,7 +20,8 @@
         "yiisoft/yii2-swiftmailer": "~2.0.0 || ~2.1.0",
         "kartik-v/yii2-widget-switchinput": "*",
         "yiisoft/yii2-bootstrap5": "*",
-        "c006/yii2-migration-utility": "dev-master"
+        "c006/yii2-migration-utility": "dev-master",
+        "nesbot/carbon": "^2.71"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
